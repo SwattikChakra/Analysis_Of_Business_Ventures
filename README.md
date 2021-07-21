@@ -1,34 +1,43 @@
 # Analysis of Business Ventures in Kolkata
 
-```
 Searching for place in kolkata city, capital of West Bengal to launch pizza place, indian restaurant and hotel
-```
+
 ```
 Swattik Chakrabarty
 ```
-**Introduction:**
+## Content
+
+1. [INTRODUCTION: BUSINESS PROBLEM](#INTRODUCTION)
+2. [AIM](#AIM)
+3. [DATA DESCRIPTION](#DATA) 
+4. [METHODOLOGY](#MET)
+5. [RESULTS](#RES)
+6. [DISCUSSION/OBSERVATIONS](#DIS)
+7. [CONCLUSION](#CON)
+
+## Introduction: <a name="INTRODUCTION"></a>
 
 Kolkata is considered one of the largest cities in India. It is among the
 top metro cities in India and is the capital of West Bengal.
-Nowadays, the hotel management industry is becomingone of the
-leading industries among all. This project deals withthe major venue
-categories in the neighborhoods of Kolkata. This projectwould
-specifically help Business personnels plan, to startnew restaurants,
-hotels, pizza places, etc.
+Nowadays, the hotel management industry is becoming one of the most booming industries among all. This project deals with the major venue
+categories in the neighborhoods of Kolkata and would specifically **help Business personnels plan, to start new restaurants,
+hotels, pizza places, etc.**
 
-#### Aim:
+
+## Aim: <a name="AIM"></a>
 
 This project aims to find the best location to opena pizza place,Indian
 restaurant and hotel in the city of joy, Kolkata,to maximize the profit of
-the owner. We want to open these in a neighborhoodwhich are
-attractive in business aspects yet less crowded withalready existing
-venues as mentioned above.
+the owner.The target audience are **business owners and restaurant owners**.We want to open these in a **neighborhood which are
+attractive in business aspects yet less crowded with already existing
+venues.**
+The Foursquare API is used to access the venues in the neighborhoods.The neighborhoods with their venues are clustered. Here the k-means clustering algorithm is used to achieve the task. 
 
-## Data Requirements:
+## Data Requirements: <a name="DATA"></a>
 
 
-★Dataset containing Neighborhoods of Kolkata- Thisdataset holds
-the names of Neighborhoods and Landmarks in Kolkataextracted
+★Dataset containing Neighborhoods of Kolkata- This dataset holds
+the names of Neighborhoods and Landmarks in Kolkatae xtracted
 from Nivalink with the help of Beautiful Soup package.
 
 
@@ -45,7 +54,7 @@ Kolkata in the used data frame.
 neighborhood in the form of a JSON file and was putin the final
 dataset to explore the venues.
 
-### Methodology:
+## Methodology:  <a name="MET"></a>
 
 As our data does not have the coordinates of the location that we extracted,
 we will use the geocoder package to get the latitudes and longitudes of 65
@@ -54,28 +63,37 @@ data that we collected. This will be done by using the coordinates of the
 location that we collected and updated in our pandas dataset.Here with the
 help of the FourSquare API we will try to collect popular venues around
 our locations. In order to make a good prediction and create a good
-analysis let's consider only the neighborhoods with more than 40 venues,
+analysis let's **consider only the neighborhoods with more than 40 venues**,
 as the neighborhoods with less than 40 venues are less popular and hence
-less populated. So as we want the new business owner to make profit in
+less populated. So as **we want the new business owner to make profit in
 their ventures we should only consider neighborhoods which are
-popular.
+popular and populated**.
 
-We performed one hot encoding on the obtained data set and used
-it to find the 10 most common venue categories ineach neighborhood.
-Then clustering can be performed on the dataset.Weare using the K -
-Nearest Neighbor clustering technique. To find theoptimal number of
-clusters, silhouette score technique is used. Initially,in the original data
-frame we only had the neighborhoods with their top10 venues. After
-fitting the data on the K-means model we insert anew column in the
-pandas dataframe, as cluster label, with the helpof our model so that each
-neighborhood can be identified with the name of theircluster and
-segregation of neighborhoods according to their respectivecluster can take
+![iMGUR](https://imgur.com/QDolGlY.png)
+
+We performed **one hot encoding** on the obtained data set and used
+it to find the **10 most common venue categories in each neighborhood**.
+
+![iopopo](https://imgur.com/U5wKklt.png)
+
+Then clustering can be performed on the dataset.Weare using the **K -
+Nearest Neighbor clustering** technique. To find the optimal number of
+clusters, **silhouette score technique** is used. 
+
+![kjdsjksd](https://imgur.com/0Cgbpvj.png)
+
+Initially,in the original data
+frame we only had the neighborhoods with their top 10 venues. After
+fitting the data on the K-means model we insert a new column in the
+pandas dataframe, as cluster label, with the help of our model so that each
+neighborhood can be identified with the name of their cluster and
+segregation of neighborhoods according to their respective cluster can take
 place
 
 ![Imgur](https://imgur.com/1kT3oZl.png)
 
 
-### Results:
+### Results:  <a name="RES"></a>
 
 
 ![Cluster1](https://imgur.com/dgo8sOD.png)
@@ -104,10 +122,11 @@ and 3 Hotels in Cluster 4
 
 ![Graphs](https://imgur.com/OuFVLmE.png)
 
-## Discussion/Observation:
+## Discussion/Observation:<a name="DIS"></a>
 
 
-## Hotels:
+
+### Hotels:
 
 As there are no pizza places and Indian restaurantsin the top 10 venues of
 this cluster hence the number of pizza places andIndian restaurants must
@@ -115,7 +134,7 @@ be less than 2 because here the 10th most popularvenue is Bengali
 restaurant whose value count is 2. There are 3 Multiplexesand 3 Hotels in
 Cluster 4
 
-## Fast Food Restaurant:
+### Fast Food Restaurant:
 
 Cluster 3 and Cluster 4 are the least popular withthe lowest number of neighborhoods
 and venues hence opening a fast food restaurant herewill not fetch the owner profits
@@ -131,7 +150,7 @@ in such a popular cluster can be utilized by businessventurers to maximize profi
 Potential Neighborhoods are: Tollygunge Metro Station,EsplanadeMetro Station,Fort
 William
 
-## Pizza Place:
+### Pizza Place:
 
 Cluster 1 has the most number of Pizza Places, soit doesn't make any sense to open a
 Pizza Place there.
@@ -144,12 +163,12 @@ the least popular it is probably not a good idea toopen it there.
 
 Potential neighborhoods to open: Townhall, EsplanadeMetro Station, Fort William
 
-## Multiplexes:
+### Multiplexes:
 
 The most popular clusters are crowded with multiplexesso opening a multiplex there
 will face a lot of competition.
 
-Cluster 4 being the least lost popular cluster isstill crowded with multiplexes(5).
+Cluster 4 being the least lost popular cluster isstill crowded with multiplexes (5).
 Hence Cluster 3 is the most suitable to open a multiplexas it is relatively popular than
 Cluster 4 and even if it has multiplexes then theywill be less than 3 therefore it will
 face less competition.
@@ -157,7 +176,7 @@ face less competition.
 Potential neighborhoods to open: Tollygunge MetroStation, Kalighat
 
 
-## Conclusion:
+## Conclusion: <a name="CON"></a>
 
 Reason for this venture was to investigate the neighborhoodsof Patna and make a
 grouping model to recommend spots to begin anotherbusiness dependent on the class.
@@ -169,4 +188,6 @@ most scene classes present, that characterizes thequalities for that specific gr
 guide showing the bunches has been given. Both ofthese can be utilized by partners to
 choose the area for the necessary kind of business.
 
+## Thank You
 
+Hope you liked my project. You can chat me up in -- [Swattik Chakrabarty](https://www.linkedin.com/in/swattik-chakrabarty-5ba2a2141/)
