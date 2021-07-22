@@ -77,7 +77,7 @@ it to find the **10 most common venue categories in each neighborhood**.
 ![iopopo](https://imgur.com/U5wKklt.png)
 
 Then clustering can be performed on the dataset.Weare using the **K -
-Nearest Neighbor clustering** technique. To find the optimal number of
+Means clustering** technique. To find the optimal number of
 clusters, **silhouette score technique** is used. 
 
 ![kjdsjksd](https://imgur.com/0Cgbpvj.png)
